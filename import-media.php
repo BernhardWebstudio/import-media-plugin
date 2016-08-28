@@ -97,6 +97,12 @@ add_action('plugin_action_links_' . plugin_basename(__FILE__), 'import_media_plu
 
 function import_media_plugin_actions($links) {
     $new_links = array();
-    $new_links[] = sprintf('<a href="options-general.php?page=import-media.php">%s</a>', __('Settings', 'import-media'));
+    $new_links[] = sprintf('<a href="options-general.php?page=import-media.php">%s</a>', __('Settings', 'bw-import-media'));
     return array_merge($new_links, $links);
 }
+
+// load translations
+function my_plugin_load_plugin_textdomain() {
+    load_plugin_textdomain( 'bw-import-media', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'my_plugin_load_plugin_textdomain' );
