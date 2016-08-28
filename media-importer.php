@@ -64,7 +64,7 @@ if (class_exists('WP_Importer')) {
         function header() {
             echo '<div class="wrap">';
             screen_icon();
-            echo '<h2>' . __('Media Importer', 'import-media-pages') . '</h2>';
+            echo '<h2>' . __('Media Importer', 'bw-import-media') . '</h2>';
         }
 
         function footer() {
@@ -77,7 +77,7 @@ if (class_exists('WP_Importer')) {
             <div class="narrow">
                 <?php
                 if ($options['firstrun'] === true) {
-                    echo '<p>' . sprintf(__('It looks like you have not yet visited the <a href="%s">Media Import options page</a>. Please do so now! You need to specify which media from which site should be imported before you proceed.', 'import-media-pages'), 'options-general.php?page=import-media.php') . '</p>';
+                    echo '<p>' . sprintf(__('It looks like you have not yet visited the <a href="%s">Media Import options page</a>. Please do so now! You need to specify which media from which site should be imported before you proceed.', 'bw-import-media'), 'options-general.php?page=import-media.php') . '</p>';
                 } else {
                     ?>
                     <h4><?php _e('What page do you eliminate today?'); ?></h4>
@@ -85,14 +85,14 @@ if (class_exists('WP_Importer')) {
 
                         <p id="directory">
                             <?php
-                            printf(__('Your media will be imported from <kbd>%s</kbd>. <a href="%s">Change url</a>.', 'import-media-pages'), esc_html($options['old_url']), 'options-general.php?page=import-media.php');
+                            printf(__('Your media will be imported from <kbd>%s</kbd>. <a href="%s">Change url</a>.', 'bw-import-media'), esc_html($options['old_url']), 'options-general.php?page=import-media.php');
                             ?>
                         </p>
 
                         <input type="hidden" name="action" value="save" />
 
                         <p class="submit">
-                            <input type="submit" name="submit" class="button" value="<?php echo esc_attr(__('Submit', 'import-media-pages')); ?>" />
+                            <input type="submit" name="submit" class="button" value="<?php echo esc_attr(__('Submit', 'bw-import-media')); ?>" />
                         </p>
                         <?php wp_nonce_field('import-media'); ?>
                     </form>
@@ -148,11 +148,11 @@ if (class_exists('WP_Importer')) {
 // copy the file to the uploads dir
                 $new_file = $uploads['path'] . '/' . $filename;
                 if (false === @copy($file, $new_file)) {
-                    return new WP_Error('upload_error', sprintf(__('Could not find the right path to %s ( tried %s ). It could not be imported. Please upload it manually.', 'import-media-pages'), basename($file), $file));
+                    return new WP_Error('upload_error', sprintf(__('Could not find the right path to %s ( tried %s ). It could not be imported. Please upload it manually.', 'bw-import-media'), basename($file), $file));
                 }
 //  DEBUG
                 else {
-                    printf(__('<br /><em>%s</em> is being copied to the uploads directory as <em>%s</em>.', 'import-media-pages'), $file, $new_file);
+                    printf(__('<br /><em>%s</em> is being copied to the uploads directory as <em>%s</em>.', 'bw-import-media'), $file, $new_file);
                 }
 // Set correct file permissions
                 $stat = stat(dirname($new_file));
@@ -241,7 +241,7 @@ if (class_exists('WP_Importer')) {
                 $count = count($srcs);
 
                 echo "<p>";
-                printf(_n('<br />Found %d image in <a href="%s">%s</a>. Importing... ', '<br />Found %d images in <a href="%s">%s</a>. Importing... ', $count, 'import-media-pages'), $count, get_permalink($post->ID), $title);
+                printf(_n('<br />Found %d image in <a href="%s">%s</a>. Importing... ', '<br />Found %d images in <a href="%s">%s</a>. Importing... ', $count, 'bw-import-media'), $count, get_permalink($post->ID), $title);
                 foreach ($srcs as $src) {
                     $src = $src[1];
 // src="http://foo.com/images/foo"
@@ -311,7 +311,7 @@ if (class_exists('WP_Importer')) {
                 $count = count($hrefs);
 
                 echo "<p>";
-                printf(_n('Found %d link in <a href="%s">%s</a>. Checking file types... <br />', 'Found %d links in <a href="%s">%s</a>. Checking file types... <br />', $count, 'import-media-pages'), $count, get_permalink($post->ID), $title);
+                printf(_n('Found %d link in <a href="%s">%s</a>. Checking file types... <br />', 'Found %d links in <a href="%s">%s</a>. Checking file types... <br />', $count, 'bw-import-media'), $count, get_permalink($post->ID), $title);
 
                 //echo '<p>Looking in '.get_permalink( $id ).'</p>';
                 foreach ($hrefs as $href) {

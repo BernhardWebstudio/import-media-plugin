@@ -2,7 +2,7 @@
 
 function import_media_get_options() {
     $defaults = array(
-        'root_directory' => ABSPATH . __('media-files-to-import', 'import-media-pages'),
+        'root_directory' => ABSPATH . __('media-files-to-import', 'bw-import-media'),
         'old_url' => '',
         'skipdirs' => '',
         'import_post' => true,
@@ -36,48 +36,48 @@ function import_media_options_page() {
 
             <div class="ui-tabs">
 
-                <h2><?php _e('Media Import Settings', 'import-media-pages'); ?></h2>
+                <h2><?php _e('Media Import Settings', 'bw-import-media'); ?></h2>
                 <?php
                 if ($options['firstrun'] === true) {
-                    echo '<p>' . sprintf(__('Welcome to Media Import! This is a complicated importer with many options. Please look through all the tabs on this page before running your import.', 'import-media-pages'), 'options-general.php?page=import-media.php') . '</p>';
+                    echo '<p>' . sprintf(__('Welcome to Media Import! This is a complicated importer with many options. Please look through all the tabs on this page before running your import.', 'bw-import-media'), 'options-general.php?page=import-media.php') . '</p>';
                 }
                 ?>
                 <h2 class="nav-tab-wrapper">
                     <ul class="ui-tabs-nav">
-                        <li><a class="nav-tab" href="#tabs-1"><?php _e("Files", 'import-media-pages'); ?></a></li>
-                        <li><a class="nav-tab" href="#tabs-2"><?php _e("Content", 'import-media-pages'); ?></a></li>
-                        <li><a class="nav-tab" href="#tabs-6"><?php _e("Tools", 'import-media-pages'); ?></a></li>
+                        <li><a class="nav-tab" href="#tabs-1"><?php _e("Files", 'bw-import-media'); ?></a></li>
+                        <li><a class="nav-tab" href="#tabs-2"><?php _e("Content", 'bw-import-media'); ?></a></li>
+                        <li><a class="nav-tab" href="#tabs-6"><?php _e("Tools", 'bw-import-media'); ?></a></li>
                     </ul>
                 </h2>
 
                 <!-- FILES -->
                 <div id="tabs-1">
-                    <h3><?php _e("Files", 'import-media-pages'); ?></h3>				
+                    <h3><?php _e("Files", 'bw-import-media'); ?></h3>				
                     <table class="form-table ui-tabs-panel" id="files">
 
                         <tr valign="top">
-                            <th scope="row"><?php _e("Old site URL", 'import-media-pages'); ?></th>
+                            <th scope="row"><?php _e("Old site URL", 'bw-import-media'); ?></th>
                             <td><p><label><input type="text" name="import_media[old_url]" id="old_url" 
                                                  value="<?php echo esc_attr($options['old_url']); ?>" class="widefloat" /> </label><br />
                                     <span class="description">
-    <?php _e('This is the site, from which the files will be imported.', 'import-media-pages'); ?>
+    <?php _e('This is the site, from which the files will be imported.', 'bw-import-media'); ?>
                                     </span>
                                 </p></td>
                         </tr>
 
                         <tr valign="top">
-                            <th scope="row"><?php _e("Document extensions to include (if documents import is enabled)", 'import-media-pages'); ?></th>
+                            <th scope="row"><?php _e("Document extensions to include (if documents import is enabled)", 'bw-import-media'); ?></th>
                             <td><p><label><input type="text" name="import_media[file_extensions]" id="file_extensions" 
                                                  value="<?php echo esc_attr($options['file_extensions']); ?>" class="widefloat" /> </label><br />
                                     <span class="description">
     <?php _e("File extensions, without periods, separated by commas. All other file types, which are not images, will 
-							be ignored.", 'import-media-pages'); ?>
+							be ignored.", 'bw-import-media'); ?>
                                     </span>
                                 </p></td>
                         </tr>
                         
                         <tr valign="top">
-                                        <th scope="row"><?php _e("Import...", 'import-media-pages'); ?></th>
+                                        <th scope="row"><?php _e("Import...", 'bw-import-media'); ?></th>
                                         <td><p><label>
                                                     <input type="checkbox" name="import_media[images]" id="skipdirs" 
                                                         value="<?php echo esc_attr($options['images']); ?>" class="widefloat" />
@@ -89,18 +89,18 @@ function import_media_options_page() {
                                                             <?php _e("Update links"); ?> 
                                                 </label><br />
                                                         <span class="description">
-    <?php _e("Select, if you want to import documents and or images", 'import-media-pages'); ?>
+    <?php _e("Select, if you want to import documents and or images", 'bw-import-media'); ?>
                                                         </span>
                                                 </p></td>
                                 </tr>
                         <!--
                                         <tr valign="top">
-                                        <th scope="row"><?php _e("Directories to exclude", 'import-media-pages'); ?></th>
+                                        <th scope="row"><?php _e("Directories to exclude", 'bw-import-media'); ?></th>
                                         <td><p><label><input type="text" name="import_media[skipdirs]" id="skipdirs" 
                                                         value="<?php echo esc_attr($options['skipdirs']); ?>" class="widefloat" />  </label><br />
                                                         <span class="description">
     <?php _e("Directory names, without slashes, separated by commas. All files in these directories 
-							will be ignored.", 'import-media-pages'); ?>
+							will be ignored.", 'bw-import-media'); ?>
                                                         </span>
                                                 </p></td>
                                 </tr>
@@ -112,57 +112,57 @@ function import_media_options_page() {
 
                 <!-- CONTENT -->	
                 <div id="tabs-2">
-                <!--<h3><?php _e("Content", 'import-media-pages'); ?></h3>				
+                <!--<h3><?php _e("Content", 'bw-import-media'); ?></h3>				
                         <table class="form-table ui-tabs-panel" id="content">
                                 <tr valign="top" id="contentselect">
-                                <th scope="row"><?php _e("Select content by", 'import-media-pages'); ?></th>
+                                <th scope="row"><?php _e("Select content by", 'bw-import-media'); ?></th>
                                 <td><p><label>
                                                 <input type="radio" name="import_media[import_content]"
                                                         value="tag" <?php checked($options['import_content'], 'tag'); ?> class="showrow" title="content" />
-    <?php _e('HTML tag', 'import-media-pages'); ?></label> 
+    <?php _e('HTML tag', 'bw-import-media'); ?></label> 
                                                 &nbsp;&nbsp;
                                                 <label>
                                                 <input type="radio" name="import_media[import_content]"
                                                         value="region" <?php checked($options['import_content'], 'region'); ?> class="showrow" title="content" />
-    <?php _e('Dreamweaver template region', 'import-media-pages'); ?></label>
+    <?php _e('Dreamweaver template region', 'bw-import-media'); ?></label>
                                                 &nbsp;&nbsp;
                                                 <label>
                                                 <input type="radio" name="import_media[import_content]"
                                                         value="file" <?php checked($options['import_content'], 'file'); ?> class="showrow" title="content" />
-    <?php _e('Import entire file', 'import-media-pages'); ?></label>
+    <?php _e('Import entire file', 'bw-import-media'); ?></label>
                                         </p>
                                         
                                         
                                         <table>
                                                 <tr id="content-tag" <?php if ($options['import_content'] != 'tag') echo 'style="display: none;"'; ?>>
                                         <td class="taginput">
-                                            <label><?php _e("Tag", 'import-media-pages'); ?><br />
+                                            <label><?php _e("Tag", 'bw-import-media'); ?><br />
                                             <input type="text" name="import_media[content_tag]" id="content_tag" value="<?php echo esc_attr($options['content_tag']); ?>" />
                                             </label>
                                             <br />
-                                            <span class="description"><?php _e("The HTML tag, without brackets", 'import-media-pages'); ?></span>
+                                            <span class="description"><?php _e("The HTML tag, without brackets", 'bw-import-media'); ?></span>
                                                 </td>
                                                 <td class="taginput">
-                                            <label><?php _e("Attribute", 'import-media-pages'); ?><br />
+                                            <label><?php _e("Attribute", 'bw-import-media'); ?><br />
                                             <input type="text" name="import_media[content_tagatt]" id="content_tagatt" value="<?php echo esc_attr($options['content_tagatt']); ?>" />
                                             </label>
                                             <br />
-                                            <span class="description"><?php _e("Leave blank to use a tag without an attribute, or when the attributes don't matter, such as &lt;body&gt;", 'import-media-pages'); ?></span>
+                                            <span class="description"><?php _e("Leave blank to use a tag without an attribute, or when the attributes don't matter, such as &lt;body&gt;", 'bw-import-media'); ?></span>
                                                 </td>
                                                 <td class="taginput">
-                                            <label><?php _e("= Value", 'import-media-pages'); ?><br />
+                                            <label><?php _e("= Value", 'bw-import-media'); ?><br />
                                             <input type="text" name="import_media[content_attval]" id="content_attval" value="<?php echo esc_attr($options['content_attval']); ?>" />
                                             </label>
                                             <br />
-                                            <span class="description"><?php _e("Enter the attribute's value ( such as width, ID, or class name ) without quotes", 'import-media-pages'); ?></span>
+                                            <span class="description"><?php _e("Enter the attribute's value ( such as width, ID, or class name ) without quotes", 'bw-import-media'); ?></span>
                                         </td>
                                 </tr>
                                 <tr id="content-region" <?php if ($options['import_content'] != 'region') echo 'style="display: none;"'; ?>>
                                         <td colspan="3">
-                                                <label><?php _e("Dreamweaver template region", 'import-media-pages'); ?><br />
+                                                <label><?php _e("Dreamweaver template region", 'bw-import-media'); ?><br />
                                         <input type="text" name="import_media[content_region]" value="<?php echo esc_attr($options['content_region']); ?>" />  
                                         </label><br />
-                                        <span class="description"><?php _e("The name of the editable region ( e.g. 'Main Content' )", 'import-media-pages'); ?></span>
+                                        <span class="description"><?php _e("The name of the editable region ( e.g. 'Main Content' )", 'bw-import-media'); ?></span>
                                         </td>
                                 </tr>
                                 </table>
@@ -171,47 +171,47 @@ function import_media_options_page() {
                         </tr>
 
                                 <tr>
-                                <th><?php _e("More content options", 'import-media-pages'); ?></th>
+                                <th><?php _e("More content options", 'bw-import-media'); ?></th>
                                 <td>
                                         <label><input name="import_media[import_images]" id="import_images"  type="checkbox" value="1" 
-    <?php checked($options['import_images'], '1'); ?> /> <?php _e("Import linked images", 'import-media-pages'); ?></label>
+    <?php checked($options['import_images'], '1'); ?> /> <?php _e("Import linked images", 'bw-import-media'); ?></label>
                                 </td>
                                 </tr>
                                 <tr>
                                 <th></th>
                                 <td>
                                         <label><input name="import_media[import_documents]" id="import_documents" value="1" type="checkbox" <?php checked($options['import_documents']); ?> class="toggle" /> 
-    <?php _e("Import linked documents", 'import-media-pages'); ?></label>
+    <?php _e("Import linked documents", 'bw-import-media'); ?></label>
                                 </td>
                                 </tr>
                                 <tr class="import_documents" 
     <?php if (isset($options['import_documents']) && !$options['import_documents']) echo 'style="display:none;"'; ?>>
-                                <th><?php _e("Allowed file types", 'import-media-pages'); ?></th>
+                                <th><?php _e("Allowed file types", 'bw-import-media'); ?></th>
                             <td><label>
                                                 <input type="text" name="import_media[document_mimes]" id="document_mimes" 
                                                         value="<?php echo esc_attr($options['document_mimes']); ?>" class="widefloat" />  </label><br />
                             <span class="description"><?php _e("Enter file extensions without periods, separated by commas. File types not listed here will not be imported to the media library. <br />
-		Suggested: rtf, doc, docx, xls, xlsx, csv, ppt, pps, pptx, ppsx, pdf, zip, wmv, avi, flv, mov, mpeg, mp3, m4a, wav<br />", 'import-media-pages'); ?></span>
+		Suggested: rtf, doc, docx, xls, xlsx, csv, ppt, pps, pptx, ppsx, pdf, zip, wmv, avi, flv, mov, mpeg, mp3, m4a, wav<br />", 'bw-import-media'); ?></span>
                             </td> 
                        </tr>
                                 <tr>
                                 <th></th>
                                 <td>
                                         <label><input name="import_media[fix_links]" id="fix_links" value="1" type="checkbox" <?php checked($options['fix_links']); ?> /> 
-    <?php _e("Update internal links", 'import-media-pages'); ?></label>
+    <?php _e("Update internal links", 'bw-import-media'); ?></label>
                                 </td>
                                 </tr>
                                 <th></th>
                                 <td>
                                         <label><input name="import_media[meta_desc]" id="meta_desc" value="1" type="checkbox" <?php checked($options['meta_desc']); ?> /> 
-    <?php _e("Use meta description as excerpt", 'import-media-pages'); ?></label>
+    <?php _e("Use meta description as excerpt", 'bw-import-media'); ?></label>
                                 </td>
                                 </tr>
                                 <tr>
                                 <th></th>
                                 <td>
                                         <label><input name="import_media[encode]" id="encode"  type="checkbox" value="1" 
-    <?php checked($options['encode'], '1'); ?> /> <?php _e("Convert special characters ( accents and symbols )", 'import-media-pages'); ?> </label>
+    <?php checked($options['encode'], '1'); ?> /> <?php _e("Convert special characters ( accents and symbols )", 'bw-import-media'); ?> </label>
                                 </td>
                                 </tr>
                                 <tr>
@@ -219,16 +219,16 @@ function import_media_options_page() {
                                 <td>
                                         <label><input name="import_media[clean_html]" id="clean_html"  type="checkbox" value="1" 
     <?php checked($options['clean_html'], '1'); ?> class="toggle" />
-    <?php _e("Clean up bad ( Word, Frontpage ) HTML", 'import-media-pages'); ?> </label>
+    <?php _e("Clean up bad ( Word, Frontpage ) HTML", 'bw-import-media'); ?> </label>
                                 </td>
                                 </tr>
                                 <tr class="clean_html" <?php if (!$options['clean_html']) echo 'style="display:none;"'; ?>>
                                  
-                                        <th><?php _e("Allowed HTML", 'import-media-pages'); ?></th>
+                                        <th><?php _e("Allowed HTML", 'bw-import-media'); ?></th>
                                     <td>    <label>
                                         <input type="text" name="import_media[allow_tags]" id="allow_tags" 
                                                                 value="<?php echo esc_attr($options['allow_tags']); ?>" class="widefloat" />  </label><br />
-                                        <span class="description"><?php _e("Enter tags ( with brackets ) to be preserved. All tags not listed here will be removed. <br />Suggested: ", 'import-media-pages'); ?> 
+                                        <span class="description"><?php _e("Enter tags ( with brackets ) to be preserved. All tags not listed here will be removed. <br />Suggested: ", 'bw-import-media'); ?> 
                                         &lt;p&gt;
                                         &lt;br&gt;
                                         &lt;img&gt;
@@ -253,7 +253,7 @@ function import_media_options_page() {
                                         &lt;hr&gt;
                                         <br />
 
-                                        <em><?php _e("If you have data tables, also include:", 'import-media-pages'); ?></em> 
+                                        <em><?php _e("If you have data tables, also include:", 'bw-import-media'); ?></em> 
                                         &lt;table&gt;
                                         &lt;tbody&gt;
                                         &lt;thead&gt;
@@ -267,12 +267,12 @@ function import_media_options_page() {
                                     </td> 
                                         </tr>
                                         <tr class="clean_html" <?php if (!$options['clean_html']) echo 'style="display:none;"'; ?>>
-                                        <th><?php _e("Allowed attributes", 'import-media-pages'); ?></th>
+                                        <th><?php _e("Allowed attributes", 'bw-import-media'); ?></th>
                                     <td><label>
                                                         <input type="text" name="import_media[allow_attributes]" id="allow_attributes" 
                                                                 value="<?php echo esc_attr($options['allow_attributes']); ?>" class="widefloat" />  </label><br />
                                     <span class="description"><?php _e("Enter attributes separated by commas. All attributes not listed here will be removed. <br />Suggested: href, src, alt, title<br />
-			    			<em>If you have data tables, also include:</em> summary, rowspan, colspan, span", 'import-media-pages'); ?></span>
+			    			<em>If you have data tables, also include:</em> summary, rowspan, colspan, span", 'bw-import-media'); ?></span>
                                     </td> 
                                </tr>
                         </table>-->
@@ -281,26 +281,26 @@ function import_media_options_page() {
 
                 <!-- TOOLS -->
                 <div id="tabs-6">
-                    <h3><?php _e("Tools", 'import-media-pages'); ?></h3>				
+                    <h3><?php _e("Tools", 'bw-import-media'); ?></h3>				
                     <table class="form-table ui-tabs-panel" id="tools">
                         <tr valign="top">
-                            <th scope="row"><?php _e("Regenerate <kbd>.htaccess</kbd> redirects", 'import-media-pages'); ?></th>
-                            <td><p><?php printf(__('If you <a href="%s">changed your permalink structure</a> after you imported files, you can <a href="%s">regenerate the redirects</a>.', 'import-media-pages'), 'wp-admin/options-permalink.php', wp_nonce_url('admin.php?import=html&step=2', 'import_media_regenerate')) ?></p></td>
+                            <th scope="row"><?php _e("Regenerate <kbd>.htaccess</kbd> redirects", 'bw-import-media'); ?></th>
+                            <td><p><?php printf(__('If you <a href="%s">changed your permalink structure</a> after you imported files, you can <a href="%s">regenerate the redirects</a>.', 'bw-import-media'), 'wp-admin/options-permalink.php', wp_nonce_url('admin.php?import=html&step=2', 'import_media_regenerate')) ?></p></td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php _e("Other helpful plugins", 'import-media-pages'); ?></th>
+                            <th scope="row"><?php _e("Other helpful plugins", 'bw-import-media'); ?></th>
                             <td>
-                                <p><?php printf(__('<a href="%s">Broken Link Checker</a> finds broken links and references to missing media files. Since the importer does not handle links or media files other than images, you should run this to see what else needs to be copied or updated from your old site.', 'import-media-pages'), 'http://wordpress.org/extend/plugins/broken-link-checker/'); ?></p>
-                                <p><?php printf(__('<a href="%s">Search and Replace</a> helps you fix many broken links at once, if you have many links to the same files or if there is a pattern ( like <kbd>&lt;a href="../../files"&gt;</kbd> ) to your broken links.', 'import-media-pages'), 'http://wordpress.org/extend/plugins/search-and-replace/'); ?></p>
-                                <p><?php printf(__('<a href="%s">Redirection</a> provides a nice admin interface for managing redirects. If you would rather not edit your <kbd>.htaccess</kbd> file, or if you just want to redirect one or two of your old pages, you can ignore the redirects generated by the importer. Instead, copy the post\'s old URL from the custom fields and paste it into Redirection\'s options.', 'import-media-pages'), 'http://wordpress.org/extend/plugins/redirection/'); ?></p>
-                                <p><?php printf(__('<a href="%s">Add from Server</a> lets you import media files that are on your server but not part of the WordPress media library.', 'import-media-pages'), 'http://wordpress.org/extend/plugins/add-from-server/'); ?></p>
-                                <p><?php printf(__('<a href="%s">Add Linked Images to Gallery</a> is helpful if you have imported data using other plugins and you would like to import linked images. However, it handles only images that are referenced with complete URLs; relative paths will not work.', 'import-media-pages'), 'http://wordpress.org/extend/plugins/add-linked-images-to-gallery-v01/'); ?></p>
+                                <p><?php printf(__('<a href="%s">Broken Link Checker</a> finds broken links and references to missing media files. Since the importer does not handle links or media files other than images, you should run this to see what else needs to be copied or updated from your old site.', 'bw-import-media'), 'http://wordpress.org/extend/plugins/broken-link-checker/'); ?></p>
+                                <p><?php printf(__('<a href="%s">Search and Replace</a> helps you fix many broken links at once, if you have many links to the same files or if there is a pattern ( like <kbd>&lt;a href="../../files"&gt;</kbd> ) to your broken links.', 'bw-import-media'), 'http://wordpress.org/extend/plugins/search-and-replace/'); ?></p>
+                                <p><?php printf(__('<a href="%s">Redirection</a> provides a nice admin interface for managing redirects. If you would rather not edit your <kbd>.htaccess</kbd> file, or if you just want to redirect one or two of your old pages, you can ignore the redirects generated by the importer. Instead, copy the post\'s old URL from the custom fields and paste it into Redirection\'s options.', 'bw-import-media'), 'http://wordpress.org/extend/plugins/redirection/'); ?></p>
+                                <p><?php printf(__('<a href="%s">Add from Server</a> lets you import media files that are on your server but not part of the WordPress media library.', 'bw-import-media'), 'http://wordpress.org/extend/plugins/add-from-server/'); ?></p>
+                                <p><?php printf(__('<a href="%s">Add Linked Images to Gallery</a> is helpful if you have imported data using other plugins and you would like to import linked images. However, it handles only images that are referenced with complete URLs; relative paths will not work.', 'bw-import-media'), 'http://wordpress.org/extend/plugins/add-linked-images-to-gallery-v01/'); ?></p>
                             </td>
                         </tr>
                         <!--<tr>
-                            <th><?php _e('Donate', 'import-media-pages') ?></th>
+                            <th><?php _e('Donate', 'bw-import-media') ?></th>
                             <td>
-                                <p><?php printf(__('If this importer has saved you hours of copying and pasting, a <a href="%s">donation toward future development</a> would be much appreciated!', 'import-media-pages'), 'http://stephanieleary.com/code/wordpress/import-media/'); ?></p>
+                                <p><?php printf(__('If this importer has saved you hours of copying and pasting, a <a href="%s">donation toward future development</a> would be much appreciated!', 'bw-import-media'), 'http://stephanieleary.com/code/wordpress/import-media/'); ?></p>
                             </td>
                         </tr>-->
                     </table>
@@ -308,7 +308,7 @@ function import_media_options_page() {
 
             </div>	<!-- UI tabs wrapper -->	
             <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e('Save settings', 'import-media-pages') ?>" />
+                <input type="submit" class="button-primary" value="<?php _e('Save settings', 'bw-import-media') ?>" />
                 <?php if (!$options['firstrun']) { ?>
                     <a href="admin.php?import=media" class="button-secondary">Import</a>
     <?php } ?>
@@ -330,8 +330,8 @@ function import_media_validate_options($input) {
     $input['root_directory'] = preg_replace('|/+|', '/', $input['root_directory']);
 
     if (validate_import_file($input['root_directory']) > 0) {
-        $msg[] = __("The beginning directory you entered is not an absolute path. Relative paths are not allowed here.", 'import-media-pages');
-        $input['root_directory'] = ABSPATH . __('html-files-to-import', 'import-media-pages');
+        $msg[] = __("The beginning directory you entered is not an absolute path. Relative paths are not allowed here.", 'bw-import-media');
+        $input['root_directory'] = ABSPATH . __('html-files-to-import', 'bw-import-media');
     }
 
     $input['root_directory'] = rtrim($input['root_directory'], '/');
@@ -430,9 +430,9 @@ function import_media_validate_options($input) {
         $linkstructure = get_option('permalink_structure');
         if (empty($linkstructure))
             $linkmsg = sprintf(__('If you intend to <a href="%s">set a permalink structure</a>, you should do it 
-				before importing so the <kbd>.htaccess</kbd> redirects will be accurate.', 'import-media-pages'), 'options-permalink.php');
+				before importing so the <kbd>.htaccess</kbd> redirects will be accurate.', 'bw-import-media'), 'options-permalink.php');
 
-        $msg = sprintf(__('Settings saved. %s <a href="%s">Ready to import files?</a>', 'import-media-pages'), $linkmsg, 'admin.php?import=media');
+        $msg = sprintf(__('Settings saved. %s <a href="%s">Ready to import files?</a>', 'bw-import-media'), $linkmsg, 'admin.php?import=media');
         // $msg .= '<pre>'. print_r( $input, false ) .'</pre>';
         $msgtype = 'updated';
     }
