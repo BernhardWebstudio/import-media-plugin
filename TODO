@@ -1,0 +1,9 @@
+# TODO
+
+- add more settings
+- check mime-type before importing
+- add screenshots
+- add translations
+- add possibility to import linked HTML-content
+- save & load already imported URLs in order to prevent double import 
+    - check for duplicates
